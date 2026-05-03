@@ -23,17 +23,19 @@ export default function MenuSection() {
   return (
     <section
       id="food-menu"
-      className="flex w-full flex-col items-center justify-center bg-noosh-cream pt-15"
+      className="flex w-full flex-col items-center justify-center bg-noosh-cream pt-10 pb-10 max-[767px]:pt-10 max-[767px]:pb-10 min-[768px]:pt-15"
     >
-      <h2 className="px-8 pb-10 text-center text-4xl max-md:hidden">
+      <h2 className="px-8 pb-10 text-center text-4xl max-[767px]:hidden">
         Fresh Ingredients, Fresh Taste
       </h2>
 
       <div className="mx-5 mb-20 flex items-center justify-center">
-        <div className="grid w-full max-w-[2000px] grid-cols-1 gap-5 lg:grid-cols-3">
+        {/* DOM order: Subs | Bowls | Smashburgers (matches desktop layout) */}
+        {/* Mobile reorder: Bowls first, then Smashburgers, then Subs */}
+        <div className="grid w-full max-w-[2000px] grid-cols-1 gap-5 min-[1301px]:grid-cols-3">
+          <Subs onItemClick={handleItemClick} />
           <NooshBowls onItemClick={handleItemClick} />
           <Smashburgers onBurgerClick={handleItemClick} />
-          <Subs onItemClick={handleItemClick} />
         </div>
       </div>
 

@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { pitaWrap } from '@/data/menu';
+import { formatPrice } from '@/lib/utils';
 
 export default function PitaWrap() {
   return (
-    <div className="relative rounded-lg border border-black p-6 text-center">
-      {/* Header: Logo + Title */}
-      <div className="-ml-2 -mt-2 mb-4 flex w-full items-center pr-6">
+    <div className="rounded-lg border border-black p-6 text-center">
+      {/* Header row: Logo + Title + Price (price uses ml-auto, no absolute positioning) */}
+      <div className="-ml-2 -mt-2 mb-4 flex w-full items-center">
         <Image
           src="/images/noosh-white.png"
           alt="Noosh Logo"
@@ -17,12 +18,10 @@ export default function PitaWrap() {
         <span className="pl-3 text-3xl font-[family-name:var(--font-tanker)]">
           Style Pita Wrap
         </span>
+        <span className="ml-auto text-xl text-noosh-red font-[family-name:var(--font-tanker)]">
+          {formatPrice(pitaWrap.price)}
+        </span>
       </div>
-
-      {/* Price — top right */}
-      <span className="absolute right-6 top-[22px] text-xl text-noosh-red">
-        {pitaWrap.price}
-      </span>
 
       {/* Divider */}
       <div className="-mx-6 border-b border-black" />
@@ -40,7 +39,8 @@ export default function PitaWrap() {
           />
         </div>
         <p className="flex-1 pl-3 text-left text-lg leading-5 font-[family-name:var(--font-anonymous-pro)]">
-          <strong>choice of protein</strong>, {pitaWrap.description.replace('choice of protein, ', '')}
+          <strong>choice of protein</strong>,{' '}
+          {pitaWrap.description.replace('choice of protein, ', '')}
         </p>
       </div>
     </div>

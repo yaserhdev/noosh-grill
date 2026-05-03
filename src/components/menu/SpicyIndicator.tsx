@@ -21,7 +21,7 @@ export default function SpicyIndicator({
           alt=""
           width={20}
           height={20}
-          className={`h-5 w-auto ${i > 0 ? '-ml-1' : 'ml-1'}`}
+          className={`h-5 w-auto ${i === 0 ? 'ml-1' : 'ml-0'}`}
           loading="lazy"
         />
       ))}

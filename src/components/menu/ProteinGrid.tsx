@@ -9,26 +9,25 @@ export default function ProteinGrid() {
         </span>
         <span className="ml-2">Choose a protein:</span>
       </h4>
-      <div className="ml-8 w-fit rounded-lg border border-black bg-noosh-gold-bright p-2">
-        <div className="grid grid-cols-2">
+      <div className="ml-8 rounded-lg border border-black bg-noosh-gold-bright p-2">
+        <div className="grid grid-cols-2 grid-rows-2">
           {proteins.map((protein, index) => {
-            /* Border logic: top-left, top-right, bottom-left, bottom-right */
-            const isTop = index < 2;
             const isLeft = index % 2 === 0;
+            const isTop = index < 2;
 
             const borderClasses = [
-              isLeft ? 'border-r' : 'border-l',
-              isTop ? 'border-b' : 'border-t',
+              isLeft && 'border-r border-black',
+              isTop && 'border-b border-black',
             ]
-              .map((b) => `${b}-[0.5px] ${b}-black`)
+              .filter(Boolean)
               .join(' ');
 
             return (
               <div
                 key={protein.name}
-                className={`flex flex-col p-3 ${isLeft ? 'pr-22' : ''} ${borderClasses}`}
+                className={`flex flex-col p-3 ${borderClasses}`}
               >
-                <span className="text-2xl font-bold font-[family-name:var(--font-tanker)]">
+                <span className="text-2xl font-bold leading-tight font-[family-name:var(--font-tanker)]">
                   {protein.name}
                 </span>
                 <span className="text-xs leading-3">{protein.description}</span>

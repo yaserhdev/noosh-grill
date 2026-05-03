@@ -5,7 +5,7 @@ export default function KidsSides() {
   return (
     <div className="mt-15">
       {/* Split-color header: 55% red, 45% green */}
-      <h3 className="mb-0 flex h-12 overflow-hidden rounded-lg p-0 text-2xl text-white font-[family-name:var(--font-tanker)]">
+      <h3 className="mb-0 flex h-14 overflow-hidden rounded-lg p-0 text-2xl text-white">
         <div className="flex w-[55%] shrink-0 items-center justify-center bg-noosh-red-dark">
           Kids
         </div>
@@ -19,14 +19,17 @@ export default function KidsSides() {
         {/* Kids column */}
         <div className="w-[55%] py-4 pl-1 pr-4">
           {kidsMenu.map((item) => (
-            <div key={item.name} className="menu-item flex justify-between">
-              <span className="text-xl">
-                {item.name}
-                <span className="block pr-3 font-[family-name:var(--font-anonymous-pro)] text-base text-noosh-gray">
+            <div
+              key={item.name}
+              className="menu-item flex justify-between py-3"
+            >
+              <span className="text-xl font-[family-name:var(--font-tanker)]">
+                <span className="block">{item.name}</span>
+                <span className="block pr-3 font-[family-name:var(--font-anonymous-pro)] text-base font-normal text-noosh-gray">
                   {item.description}
                 </span>
               </span>
-              <span className="ml-4 shrink-0 text-xl text-noosh-red">
+              <span className="ml-4 shrink-0 text-xl text-noosh-red font-[family-name:var(--font-tanker)]">
                 {formatPrice(item.price)}
               </span>
             </div>
@@ -38,10 +41,12 @@ export default function KidsSides() {
           {sides.map((item) => (
             <div
               key={item.name}
-              className="flex items-end justify-between pt-2.5"
+              className="flex items-end justify-between py-3"
             >
-              <span className="text-xl">{item.name}</span>
-              <span className="ml-5 shrink-0 text-xl text-noosh-red">
+              <span className="text-xl font-[family-name:var(--font-tanker)]">
+                {item.name}
+              </span>
+              <span className="ml-5 shrink-0 text-xl text-noosh-red font-[family-name:var(--font-tanker)]">
                 {formatPrice(item.price)}
               </span>
             </div>

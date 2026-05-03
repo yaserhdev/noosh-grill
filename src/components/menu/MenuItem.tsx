@@ -17,16 +17,16 @@ export default function MenuItem({ item, onItemClick }: MenuItemProps) {
       onClick={() => onItemClick(item)}
       aria-label={`View details for ${item.name}`}
     >
-      <span className="text-xl">
+      <span className="text-xl font-[family-name:var(--font-tanker)]">
         <span className="flex items-center">
           {item.name}
           {item.spicy && <SpicyIndicator />}
         </span>
-        <span className="block font-[family-name:var(--font-anonymous-pro)] text-base text-noosh-gray">
+        <span className="block font-[family-name:var(--font-anonymous-pro)] text-base leading-5 text-noosh-gray">
           {item.description}
         </span>
       </span>
-      <span className="ml-4 shrink-0 text-xl text-noosh-red">
+      <span className="ml-4 shrink-0 text-xl font-[family-name:var(--font-tanker)] text-noosh-red">
         {formatPrice(item.price)}
       </span>
     </button>

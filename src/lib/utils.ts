@@ -33,8 +33,8 @@ export function getMenuItemImagePath(itemName: string): string {
 
 /**
  * Formats a price for display.
- * Whole numbers display without decimals, fractional numbers show to 2 places.
+ * Matches live site format: 8, 11, 8.5, 11.5, 8.75 (no trailing zeros)
  */
 export function formatPrice(price: number): string {
-  return Number.isInteger(price) ? price.toString() : price.toFixed(2);
+  return price.toString();
 }

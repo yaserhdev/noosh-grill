@@ -10,17 +10,17 @@ export default function SauceGrid() {
         </span>
         <span className="ml-2">Choose a sauce:</span>
       </h4>
-      <div className="ml-8 w-fit rounded-lg border border-black bg-noosh-gold-bright p-2">
-        <div className="grid grid-cols-2">
+      <div className="ml-8 rounded-lg border border-black bg-noosh-gold-bright p-2">
+        <div className="grid grid-cols-2 grid-rows-2">
           {sauces.map((sauce, index) => {
-            const isTop = index < 2;
             const isLeft = index % 2 === 0;
+            const isTop = index < 2;
 
             const borderClasses = [
-              isLeft ? 'border-r' : 'border-l',
-              isTop ? 'border-b' : 'border-t',
+              isLeft && 'border-r border-black',
+              isTop && 'border-b border-black',
             ]
-              .map((b) => `${b}-[0.5px] ${b}-black`)
+              .filter(Boolean)
               .join(' ');
 
             return (
@@ -28,7 +28,7 @@ export default function SauceGrid() {
                 key={sauce.name}
                 className={`flex flex-col items-start p-3 ${borderClasses}`}
               >
-                <span className="text-2xl font-bold font-[family-name:var(--font-tanker)]">
+                <span className="flex items-center text-2xl font-bold leading-tight font-[family-name:var(--font-tanker)]">
                   {sauce.name}
                   {sauce.spicyLevel && (
                     <SpicyIndicator level={sauce.spicyLevel} variant="yellow" />
