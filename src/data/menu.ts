@@ -60,7 +60,7 @@ export const subs: MenuItem[] = [
 
 export const pitaWrap = {
   name: 'Noosh Style Pita Wrap',
-  price: 11,
+  price: 12,
   description:
     'choice of protein, tomato, onions, lettuce, and tzatziki or choice of sauce',
 };
@@ -89,8 +89,8 @@ export const burgers: BurgerItem[] = [
   },
   {
     name: 'Patriot',
-    singlePrice: 8.75,
-    doublePrice: 11.75,
+    singlePrice: 9,
+    doublePrice: 12,
     description:
       'fresh premium beef patty, topped with cheese, lettuce, tomato, pickles, and our burger sauce',
     image: 'patriot.jpg',
@@ -108,7 +108,7 @@ export const burgerExtras: BurgerExtra[] = [
    ============================================================ */
 
 export const buildYourOwnBowl = {
-  price: 13,
+  price: 14,
   description:
     'All bowls are served over basmati rice and a fresh chopped salad (cucumber, tomato, lime-mint dressing)',
 };
@@ -168,12 +168,12 @@ export const kidsMenu: KidsItem[] = [
   },
   {
     name: "Lil' Smashburger",
-    price: 7,
+    price: 7.5,
     description: 'ketchup, mayo and cheese',
   },
   {
     name: "Lil' Chicken Nuggets",
-    price: 7,
+    price: 8,
     description: 'served with fries',
   },
 ];
@@ -186,7 +186,7 @@ export const sides: SideItem[] = [
   { name: 'Fries', price: 4 },
   { name: 'Spicy Fries', price: 4.5 },
   { name: 'Falafel (7) w/Sauce', price: 4.5 },
-  { name: 'Chicken Rolls (2) w/Sauce', price: 5 },
+  { name: 'Loaded Fries', price: 11 },
   { name: 'Red Pepper Hummus & Pita', price: 5 },
   { name: 'Pita', price: 2 },
   { name: 'Can Soda, Water, Juicebox', price: 2 },
