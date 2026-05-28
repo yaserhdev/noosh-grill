@@ -4,7 +4,7 @@ import { formatPrice } from '@/lib/utils';
 
 export default function PitaWrap() {
   return (
-    <div className="rounded-lg border border-black p-6 text-center">
+    <div className="mt-8 rounded-lg border border-black p-6 text-center">
       <div className="-ml-2 -mt-2 mb-4 flex w-full items-center">
         <Image
           src="/images/noosh-white.png"

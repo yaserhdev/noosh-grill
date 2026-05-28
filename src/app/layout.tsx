@@ -29,6 +29,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.eatnoosh.com'),
   title: 'Noosh Grill',
   description:
     'Noosh Grill in Fairfax, VA offers fresh, high-quality halal food including NY-style chicken over rice, smash burgers, and wraps in a welcoming, family-friendly environment.',

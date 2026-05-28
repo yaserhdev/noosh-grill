@@ -7,6 +7,8 @@ import type { MenuItem, BurgerItem, SpecialtyBowl } from '@/types/menu';
 
 type ModalItem = MenuItem | BurgerItem | SpecialtyBowl;
 
+const TOAST_ORDER_URL = 'https://noosh.toast.site/order';
+
 interface MenuItemModalProps {
   item: ModalItem | null;
   onClose: () => void;
@@ -19,8 +21,8 @@ function getDisplayPrice(item: ModalItem): string {
   return `$${formatPrice(item.price)}`;
 }
 
-function getDisplayDescription(item: ModalItem): string {
-  return item.description;
+function getOrderUrl(item: ModalItem): string {
+  return item.toastUrl ?? TOAST_ORDER_URL;
 }
 
 export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
@@ -97,13 +99,15 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
         <h3 className="mb-2 text-2xl font-bold text-noosh-red font-[family-name:var(--font-tanker)]">
           {item.name}
         </h3>
-        <p className="mb-2 text-lg font-bold text-noosh-red">
+        <p className="mb-2 text-lg font-bold text-noosh-red font-[family-name:var(--font-tanker)]">
           {getDisplayPrice(item)}
         </p>
-        <p className="mb-4 text-gray-700">{getDisplayDescription(item)}</p>
+        <p className="mb-4 text-gray-700 font-[family-name:var(--font-montserrat)]">
+          {item.description}
+        </p>
 
         <a
-          href="https://noosh.toast.site/order"
+          href={getOrderUrl(item)}
           target="_blank"
           rel="noopener noreferrer"
           className="mb-2 inline-block rounded-md border-2 border-noosh-red bg-noosh-cream px-4 py-2 text-noosh-red transition-colors duration-200 hover:border-noosh-green hover:text-noosh-green font-[family-name:var(--font-tanker)]"

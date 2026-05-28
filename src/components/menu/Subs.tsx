@@ -25,8 +25,6 @@ export default function Subs({ onItemClick, className = '' }: SubsProps) {
         <MenuItem key={sub.name} item={sub} onItemClick={onItemClick} />
       ))}
 
-      <br></br>
-
       <PitaWrap />
 
       <HalalBadge />

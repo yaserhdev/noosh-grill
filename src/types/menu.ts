@@ -8,6 +8,7 @@ export interface MenuItem {
   description: string;
   spicy?: boolean;
   image: string;
+  toastUrl?: string;
 }
 
 export interface BurgerItem {
@@ -17,6 +18,7 @@ export interface BurgerItem {
   description: string;
   spicy?: boolean;
   image: string;
+  toastUrl?: string;
 }
 
 export interface BurgerExtra {
@@ -41,6 +43,7 @@ export interface SpecialtyBowl {
   description: string;
   spicy?: boolean;
   image: string;
+  toastUrl?: string;
 }
 
 export interface KidsItem {

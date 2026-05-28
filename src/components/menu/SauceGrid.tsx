@@ -34,7 +34,9 @@ export default function SauceGrid() {
                     <SpicyIndicator level={sauce.spicyLevel} variant="yellow" />
                   )}
                 </span>
-                <span className="text-xs leading-3">{sauce.description}</span>
+                <span className="text-xs leading-3 font-[family-name:var(--font-montserrat)]">
+                  {sauce.description}
+                </span>
               </div>
             );
           })}

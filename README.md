@@ -8,7 +8,7 @@ Fresh halal food in Fairfax, VA — [eatnoosh.com](https://www.eatnoosh.com)
 - **Styling:** Tailwind CSS 4
 - **Animations:** GSAP 3.x + ScrollTrigger
 - **Images:** `next/image` with automatic WebP/AVIF
-- **Fonts:** Tanker (local) + Anonymous Pro (Google)
+- **Fonts:** Tanker (local) + Montserrat (Google)
 - **Forms:** Formspree
 - **Deployment:** Vercel
 
@@ -30,9 +30,23 @@ npm run build
 npm start
 ```
 
+## Environment Variables
+
+Copy `.env.local.example` to `.env.local` and fill in the values:
+
+```bash
+cp env.local.example .env.local
+```
+
+| Variable | Required | Description |
+|---|---|---|
+| `NEXT_PUBLIC_FORMSPREE_ID` | Yes | Formspree form ID for the contact form |
+| `GOOGLE_PLACES_API_KEY` | No | Google Places API key — falls back to curated reviews if missing |
+| `GOOGLE_PLACE_ID` | No | Google Place ID for Noosh Grill — falls back to curated reviews if missing |
+
 ## Deployment
 
-Deployed on Vercel, automatically from `main` branch.
+Deployed on Vercel, automatically from `main` branch. Add environment variables in the Vercel project settings before deploying.
 
 ## License
 

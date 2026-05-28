@@ -30,7 +30,9 @@ export default function ProteinGrid() {
                 <span className="text-2xl font-bold leading-tight font-[family-name:var(--font-tanker)]">
                   {protein.name}
                 </span>
-                <span className="text-xs leading-3">{protein.description}</span>
+                <span className="text-xs leading-3 font-[family-name:var(--font-montserrat)]">
+                  {protein.description}
+                </span>
               </div>
             );
           })}

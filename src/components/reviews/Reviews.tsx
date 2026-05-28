@@ -1,6 +1,10 @@
 import { getReviews } from '@/lib/reviews/provider';
 import ReviewCard from './ReviewCard';
 
+const GOOGLE_REVIEW_URL =
+  'https://www.google.com/search?sca_esv=fd9128bd119c9691&sxsrf=ANbL-n7nF3xdmepfUexB-bs3X75k8hVA5Q:1779929237876&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWI86cUcwtCxlS-yIVLq5rdc3F1e-HrhHL5fVJOAoWjFop7lz8R-y8UrsmeoCYQ9LzVKZM2UNQWZzrKaZzZr6u-_wK2D&q=Noosh+Grill+Reviews&sa=X&ved=2ahUKEwjLtsuP4dqUAxXwKFkFHT5dA18Q0bkNegQIMhAH&biw=2262&bih=1174&dpr=1';
+const YELP_REVIEW_URL = 'https://www.yelp.com/biz/noosh-grill-fairfax-2';
+
 export default async function Reviews() {
   const reviews = await getReviews();
 
@@ -45,21 +49,81 @@ export default async function Reviews() {
         </div>
       </div>
 
-      <div className="mt-10 flex items-center justify-center gap-2">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="#ffbe36"
-          stroke="none"
-          aria-hidden="true"
+      {/* Platform badges */}
+      <div className="mt-10 flex flex-wrap items-start justify-center gap-12">
+
+        {/* Google */}
+        <a
+          href={GOOGLE_REVIEW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-2 transition-opacity duration-200 hover:opacity-75"
+          aria-label="4.9 stars on Google — 400+ reviews. Opens Google Reviews."
         >
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-        <span className="text-sm font-bold text-noosh-cream font-[family-name:var(--font-tanker)]">
-          4.9 on Google
-        </span>
-        <span className="text-sm text-noosh-cream/60">· 200+ reviews</span>
+          <div className="flex items-center gap-1">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <svg
+                key={i}
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="#ffbe36"
+                stroke="none"
+                aria-hidden="true"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-sm text-noosh-cream/70 font-[family-name:var(--font-montserrat)]">
+            4.9 · 400+ reviews
+          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/google.svg"
+            alt="Google"
+            width={64}
+            height={64}
+            className="h-10 w-auto"
+          />
+        </a>
+
+        {/* Yelp */}
+        <a
+          href={YELP_REVIEW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-2 transition-opacity duration-200 hover:opacity-75"
+          aria-label="4.9 stars on Yelp — 80+ reviews. Opens Yelp listing."
+        >
+          <div className="flex items-center gap-1">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <svg
+                key={i}
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="#ffbe36"
+                stroke="none"
+                aria-hidden="true"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-sm text-noosh-cream/70 font-[family-name:var(--font-montserrat)]">
+            4.9 · 80+ reviews
+          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/yelp.svg"
+            alt="Yelp"
+            width={64}
+            height={64}
+            className="h-10 w-auto"
+          />
+        </a>
+
       </div>
     </section>
   );
