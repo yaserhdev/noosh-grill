@@ -6,6 +6,7 @@ import NooshBowls from '../menu/NooshBowls';
 import Smashburgers from '../menu/Smashburgers';
 import Subs from '../menu/Subs';
 import MenuItemModal from '../menu/MenuItemModal';
+import MenuImagePreloader from '../menu/MenuImagePreloader';
 
 type ModalItem = MenuItem | BurgerItem | SpecialtyBowl;
 
@@ -20,7 +21,9 @@ export default function MenuSection() {
       id="food-menu"
       className="flex w-full flex-col items-center justify-center bg-noosh-cream pt-10 pb-10 min-[768px]:pt-15"
     >
-      {/* Visible on all screen sizes */}
+      {/* Preload all menu item images silently */}
+      <MenuImagePreloader />
+
       <h2 className="px-8 pb-10 text-center text-4xl">
         Fresh Ingredients, Fresh Taste
       </h2>
