@@ -41,7 +41,14 @@ export const metadata: Metadata = {
     title: 'Noosh Grill - Fresh Halal Food in Fairfax, VA',
     description:
       'Enjoy delicious halal dishes like smash burgers and chicken over rice at Noosh Grill, a cozy neighborhood spot in Fairfax, VA.',
-    images: [{ url: '/images/noosh_logo.png' }],
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Noosh Grill - Fresh Halal Food in Fairfax, VA',
+      },
+    ],
     url: 'https://www.eatnoosh.com',
     type: 'website',
   },
