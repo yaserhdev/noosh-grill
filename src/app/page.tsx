@@ -5,6 +5,7 @@ import MenuSection from '@/components/sections/MenuSection';
 import RestaurantPhoto from '@/components/sections/RestaurantPhoto';
 import Reviews from '@/components/reviews/Reviews';
 import Contact from '@/components/sections/Contact';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

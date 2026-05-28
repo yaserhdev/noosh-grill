@@ -18,18 +18,13 @@ export default function MenuSection() {
   return (
     <section
       id="food-menu"
-      className="flex w-full flex-col items-center justify-center bg-noosh-cream pt-10 pb-10 max-[767px]:pt-10 max-[767px]:pb-10 min-[768px]:pt-15"
+      className="flex w-full flex-col items-center justify-center bg-noosh-cream pt-10 pb-10 min-[768px]:pt-15"
     >
-      <h2 className="px-8 pb-10 text-center text-4xl max-[767px]:hidden">
+      {/* Visible on all screen sizes */}
+      <h2 className="px-8 pb-10 text-center text-4xl">
         Fresh Ingredients, Fresh Taste
       </h2>
 
-      {/*
-        mx-5 on the outer div + items-center justify-center on the section
-        gives the 20px gutters. No w-full here — that was overriding the margins.
-        Mobile order:  Bowls → Smashburgers → Subs  (DOM order)
-        Desktop order: Subs | Bowls | Smashburgers   (className prop on each column)
-      */}
       <div className="mx-5 mb-20 flex items-center justify-center">
         <div className="grid w-full max-w-[2000px] grid-cols-1 gap-5 min-[1301px]:grid-cols-3">
           <NooshBowls
