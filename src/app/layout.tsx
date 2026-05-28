@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
-import { Analytics } from '@vercel/analytics/react';
 
 const tanker = localFont({
   src: [
@@ -80,6 +80,8 @@ const jsonLd = {
     'Noosh Grill offers fresh halal dishes including smash burgers, chicken over rice, and wraps in a welcoming Fairfax, VA location.',
 };
 
+const GA_ID = 'G-Q9HT00FTBV';
+
 export default function RootLayout({
   children,
 }: {
@@ -93,7 +95,23 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="m-0 p-0 leading-relaxed">{children}<Analytics /></body>
+      <body className="m-0 p-0 leading-relaxed">
+        {children}
+
+        {/* Google Analytics — loads after page is interactive, never blocks render */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

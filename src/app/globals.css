@@ -49,6 +49,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   GSAP Reveal — prevent flash of visible content before
+   JS hydrates and GSAP sets initial opacity: 0
+   ============================================================ */
+
+[data-reveal] {
+  opacity: 0;
+}
+
+/* Reduced motion — skip animation entirely, always visible */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
    Cursor — every interactive element gets pointer
    ============================================================ */
 

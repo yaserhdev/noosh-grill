@@ -9,7 +9,7 @@
    Placeholder: https://www.instagram.com/nooshgrill
    ============================================================ */
 
-const INSTAGRAM_URL = 'https://www.instagram.com/nooshgrill';
+const INSTAGRAM_URL = 'https://www.instagram.com/noosh.grill';
 const CREADEV_URL = 'https://www.creadevdesign.com/';
 
 export default function Footer() {
