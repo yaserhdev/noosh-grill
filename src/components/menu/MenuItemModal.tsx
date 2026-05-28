@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { getMenuItemImagePath, formatPrice } from '@/lib/utils';
+import { formatPrice } from '@/lib/utils';
 import type { MenuItem, BurgerItem, SpecialtyBowl } from '@/types/menu';
 
 type ModalItem = MenuItem | BurgerItem | SpecialtyBowl;
@@ -70,7 +70,8 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
 
   if (!item) return null;
 
-  const imagePath = 'image' in item ? getMenuItemImagePath(item.name) : '';
+  /* Use item.image directly — avoids name collision between sub and bowl */
+  const imagePath = 'image' in item && item.image ? `/images/${item.image}` : null;
 
   return (
     <div
@@ -86,7 +87,7 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
         ref={modalRef}
         className="w-full max-w-md rounded-lg bg-noosh-cream p-6 text-center"
       >
-        {'image' in item && imagePath && (
+        {imagePath && (
           <Image
             src={imagePath}
             alt={item.name}
