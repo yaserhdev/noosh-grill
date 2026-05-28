@@ -32,7 +32,7 @@ export default function KidsSides() {
 
         <div className="w-[45%] border-l border-black py-4 pl-4">
           {sides.map((item) => (
-            <div key={item.name} className="flex items-end justify-between py-3">
+            <div key={item.name} className="flex items-center justify-between py-3">
               <span className="text-xl font-[family-name:var(--font-tanker)]">
                 {item.name}
               </span>

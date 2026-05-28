@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const tanker = localFont({
   src: [
@@ -92,7 +93,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="m-0 p-0 leading-relaxed">{children}</body>
+      <body className="m-0 p-0 leading-relaxed">{children}<Analytics /></body>
     </html>
   );
 }
