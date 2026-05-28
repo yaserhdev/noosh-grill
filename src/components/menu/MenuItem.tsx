@@ -22,7 +22,7 @@ export default function MenuItem({ item, onItemClick }: MenuItemProps) {
           {item.name}
           {item.spicy && <SpicyIndicator />}
         </span>
-        <span className="block font-[family-name:var(--font-anonymous-pro)] text-base leading-5 text-noosh-gray">
+        <span className="block text-base leading-5 text-noosh-gray font-[family-name:var(--font-montserrat)]">
           {item.description}
         </span>
       </span>

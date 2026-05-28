@@ -5,7 +5,6 @@ import { formatPrice } from '@/lib/utils';
 export default function PitaWrap() {
   return (
     <div className="rounded-lg border border-black p-6 text-center">
-      {/* Header row: Logo + Title + Price (price uses ml-auto, no absolute positioning) */}
       <div className="-ml-2 -mt-2 mb-4 flex w-full items-center">
         <Image
           src="/images/noosh-white.png"
@@ -23,10 +22,8 @@ export default function PitaWrap() {
         </span>
       </div>
 
-      {/* Divider */}
       <div className="-mx-6 border-b border-black" />
 
-      {/* Description with pita wrap icon */}
       <div className="-ml-2 mt-5 flex min-h-[75px] items-center">
         <div className="flex h-full w-[75px] shrink-0 items-center justify-center">
           <Image
@@ -38,7 +35,7 @@ export default function PitaWrap() {
             loading="lazy"
           />
         </div>
-        <p className="flex-1 pl-3 text-left text-lg leading-5 font-[family-name:var(--font-anonymous-pro)]">
+        <p className="flex-1 pl-3 text-left text-lg leading-5 font-[family-name:var(--font-montserrat)]">
           <strong>choice of protein</strong>,{' '}
           {pitaWrap.description.replace('choice of protein, ', '')}
         </p>

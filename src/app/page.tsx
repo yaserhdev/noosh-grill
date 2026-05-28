@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import About from '@/components/sections/About';
 import MenuSection from '@/components/sections/MenuSection';
 import RestaurantPhoto from '@/components/sections/RestaurantPhoto';
+import Reviews from '@/components/reviews/Reviews';
 import Contact from '@/components/sections/Contact';
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       >
         <About />
         <MenuSection />
-        {/* Phase 3: <Reviews /> */}
+        <Reviews />
         <RestaurantPhoto />
         <Contact />
       </main>

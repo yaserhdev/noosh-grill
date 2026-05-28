@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { Anonymous_Pro } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
-
-/* ============================================================
-   Font Configuration
-   ============================================================ */
 
 const tanker = localFont({
   src: [
@@ -24,17 +20,13 @@ const tanker = localFont({
   display: 'swap',
 });
 
-const anonymousPro = Anonymous_Pro({
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-anonymous-pro',
+  variable: '--font-montserrat',
   display: 'swap',
 });
-
-/* ============================================================
-   Metadata
-   ============================================================ */
 
 export const metadata: Metadata = {
   title: 'Noosh Grill',
@@ -56,10 +48,6 @@ export const metadata: Metadata = {
     icon: '/images/noosh_favicon.png',
   },
 };
-
-/* ============================================================
-   JSON-LD Structured Data
-   ============================================================ */
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -83,17 +71,13 @@ const jsonLd = {
     'Noosh Grill offers fresh halal dishes including smash burgers, chicken over rice, and wraps in a welcoming Fairfax, VA location.',
 };
 
-/* ============================================================
-   Root Layout
-   ============================================================ */
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${tanker.variable} ${anonymousPro.variable}`}>
+    <html lang="en" className={`${tanker.variable} ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"

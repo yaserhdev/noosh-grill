@@ -23,19 +23,19 @@ export default function BurgerItem({ item, onItemClick }: BurgerItemProps) {
           {item.spicy && <SpicyIndicator />}
         </span>
         <div className="flex w-full">
-          <span className="w-[62%] font-[family-name:var(--font-anonymous-pro)] text-base leading-5 text-noosh-gray">
+          <span className="w-[62%] text-base leading-5 text-noosh-gray font-[family-name:var(--font-montserrat)]">
             {item.description}
           </span>
           <div className="ml-auto flex w-[30%] flex-col justify-start text-base">
             <div className="flex justify-between">
-              <span className="text-black">Single</span>
-              <span className="font-bold text-noosh-red">
+              <span className="text-black font-[family-name:var(--font-tanker)]">Single</span>
+              <span className="font-bold text-noosh-red font-[family-name:var(--font-tanker)]">
                 {formatPrice(item.singlePrice)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-black">Double</span>
-              <span className="font-bold text-noosh-red">
+              <span className="text-black font-[family-name:var(--font-tanker)]">Double</span>
+              <span className="font-bold text-noosh-red font-[family-name:var(--font-tanker)]">
                 {formatPrice(item.doublePrice)}
               </span>
             </div>

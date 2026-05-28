@@ -20,11 +20,11 @@ export default function BuildYourOwn() {
           <h4 className="pr-6 text-2xl font-bold font-[family-name:var(--font-tanker)]">
             Build Your Own
           </h4>
-          <span className="shrink-0 text-xl text-noosh-red">
+          <span className="shrink-0 text-xl text-noosh-red font-[family-name:var(--font-tanker)]">
             {formatPrice(buildYourOwnBowl.price)}
           </span>
         </div>
-        <p className="pr-10 text-lg" style={{ lineHeight: 1.25 }}>
+        <p className="pr-10 text-lg font-[family-name:var(--font-montserrat)]" style={{ lineHeight: 1.25 }}>
           {buildYourOwnBowl.description}
         </p>
       </div>

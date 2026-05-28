@@ -12,13 +12,8 @@ type ModalItem = MenuItem | BurgerItem | SpecialtyBowl;
 export default function MenuSection() {
   const [selectedItem, setSelectedItem] = useState<ModalItem | null>(null);
 
-  const handleItemClick = (item: ModalItem) => {
-    setSelectedItem(item);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedItem(null);
-  };
+  const handleItemClick = (item: ModalItem) => setSelectedItem(item);
+  const handleCloseModal = () => setSelectedItem(null);
 
   return (
     <section
@@ -29,13 +24,26 @@ export default function MenuSection() {
         Fresh Ingredients, Fresh Taste
       </h2>
 
+      {/*
+        mx-5 on the outer div + items-center justify-center on the section
+        gives the 20px gutters. No w-full here — that was overriding the margins.
+        Mobile order:  Bowls → Smashburgers → Subs  (DOM order)
+        Desktop order: Subs | Bowls | Smashburgers   (className prop on each column)
+      */}
       <div className="mx-5 mb-20 flex items-center justify-center">
-        {/* DOM order: Subs | Bowls | Smashburgers (matches desktop layout) */}
-        {/* Mobile reorder: Bowls first, then Smashburgers, then Subs */}
         <div className="grid w-full max-w-[2000px] grid-cols-1 gap-5 min-[1301px]:grid-cols-3">
-          <Subs onItemClick={handleItemClick} />
-          <NooshBowls onItemClick={handleItemClick} />
-          <Smashburgers onBurgerClick={handleItemClick} />
+          <NooshBowls
+            onItemClick={handleItemClick}
+            className="min-[1301px]:order-2"
+          />
+          <Smashburgers
+            onBurgerClick={handleItemClick}
+            className="min-[1301px]:order-3"
+          />
+          <Subs
+            onItemClick={handleItemClick}
+            className="min-[1301px]:order-1"
+          />
         </div>
       </div>
 

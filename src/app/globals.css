@@ -2,11 +2,9 @@
 
 /* ============================================================
    Noosh Grill — Tailwind v4 Theme Configuration
-   All brand colors, fonts, and design tokens defined here.
    ============================================================ */
 
 @theme {
-  /* Brand Colors */
   --color-noosh-red: #ba482a;
   --color-noosh-red-dark: #CA4128;
   --color-noosh-green: #7ea140;
@@ -18,11 +16,9 @@
   --color-noosh-cream: #f4ede2;
   --color-noosh-gray: #5c5c5c;
 
-  /* Font Families — CSS variables set by next/font in layout.tsx */
   --font-heading: var(--font-tanker);
-  --font-body: var(--font-anonymous-pro);
+  --font-body: var(--font-montserrat);
 
-  /* Animation Timing */
   --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -44,17 +40,32 @@ html {
 }
 
 body {
-  font-family: var(--font-body), monospace;
+  font-family: var(--font-body), sans-serif;
   font-weight: 400;
 }
 
-/* Heading font applied globally */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), sans-serif;
 }
 
 /* ============================================================
-   Focus Styles — Accessible, brand-matched
+   Cursor — every interactive element gets pointer
+   ============================================================ */
+
+a,
+button,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+select,
+label[for],
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+/* ============================================================
+   Focus Styles
    ============================================================ */
 
 :focus-visible {
@@ -64,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
-   Reduced Motion — Respect user preference
+   Reduced Motion
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -76,4 +87,13 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   Reviews Marquee
+   ============================================================ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }

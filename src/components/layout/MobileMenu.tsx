@@ -3,17 +3,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
-/* ============================================================
-   MobileMenu — Slide-in drawer
-   ------------------------------------------------------------
-   - Slides in from the right
-   - Focus trap (cycles between focusable elements)
-   - Escape key closes
-   - Click backdrop closes
-   - Body scroll lock while open
-   - aria-modal + aria-hidden for screen readers
-   ============================================================ */
-
 interface NavLink {
   href: string;
   label: string;
@@ -98,14 +87,14 @@ export default function MobileMenu({
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Drawer header */}
-        <div className="flex items-center justify-between border-b border-black/10 px-6 py-5">
+        {/* Drawer header — fixed height, overflow hidden keeps logo from pushing it taller */}
+        <div className="flex h-[85px] shrink-0 items-center justify-between overflow-hidden border-b border-black/10 px-6">
           <Image
             src="/images/noosh_logo.png"
             alt="Noosh Grill"
-            width={100}
-            height={40}
-            className="h-10 w-auto"
+            width={160}
+            height={64}
+            className="h-16 w-auto"
             priority
           />
           <button
@@ -113,7 +102,7 @@ export default function MobileMenu({
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-noosh-red transition-colors duration-200 hover:bg-noosh-red hover:text-white focus-visible:bg-noosh-red focus-visible:text-white"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-noosh-red transition-colors duration-200 hover:bg-noosh-red hover:text-white focus-visible:bg-noosh-red focus-visible:text-white"
           >
             <svg
               width="20"
@@ -141,7 +130,7 @@ export default function MobileMenu({
                 <a
                   href={link.href}
                   onClick={onClose}
-                  className="block py-3 text-3xl text-noosh-green-text transition-colors duration-200 hover:text-noosh-red font-[family-name:var(--font-tanker)]"
+                  className="block py-3 text-3xl text-noosh-red transition-colors duration-200 hover:text-noosh-green font-[family-name:var(--font-tanker)]"
                 >
                   {link.label}
                 </a>
@@ -154,7 +143,7 @@ export default function MobileMenu({
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-noosh-red px-6 py-3 text-xl text-white transition-colors duration-200 hover:bg-noosh-green-text font-[family-name:var(--font-tanker)]"
+            className="mt-8 inline-flex items-center justify-center rounded-md bg-noosh-red px-6 py-3 text-xl text-white transition-colors duration-200 hover:bg-noosh-green font-[family-name:var(--font-tanker)]"
           >
             Order Now
           </a>

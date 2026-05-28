@@ -34,7 +34,6 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
         return;
       }
 
-      /* Focus trap — cycle between modal elements */
       if (e.key === 'Tab' && modalRef.current) {
         const focusable = modalRef.current.querySelectorAll<HTMLElement>(
           'button, a, [tabindex]:not([tabindex="-1"])'
@@ -57,12 +56,8 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
   useEffect(() => {
     if (!item) return;
 
-    /* Focus the close button on open */
     closeButtonRef.current?.focus();
-
-    /* Lock body scroll */
     document.body.style.overflow = 'hidden';
-
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
@@ -111,7 +106,7 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
           href="https://noosh.toast.site/order"
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-2 inline-block rounded-md border-2 border-noosh-red bg-noosh-cream px-4 py-2 text-noosh-red transition-colors duration-200 hover:border-noosh-green-text hover:text-noosh-green-text font-[family-name:var(--font-tanker)]"
+          className="mb-2 inline-block rounded-md border-2 border-noosh-red bg-noosh-cream px-4 py-2 text-noosh-red transition-colors duration-200 hover:border-noosh-green hover:text-noosh-green font-[family-name:var(--font-tanker)]"
         >
           Order Now
         </a>
@@ -120,7 +115,7 @@ export default function MenuItemModal({ item, onClose }: MenuItemModalProps) {
           ref={closeButtonRef}
           type="button"
           onClick={onClose}
-          className="mt-2 block w-full rounded-md bg-noosh-red px-4 py-2 text-white transition-colors duration-200 hover:bg-noosh-green-text font-[family-name:var(--font-tanker)]"
+          className="mt-2 block w-full rounded-md bg-noosh-red px-4 py-2 text-white transition-colors duration-200 hover:bg-noosh-green font-[family-name:var(--font-tanker)]"
         >
           Close
         </button>

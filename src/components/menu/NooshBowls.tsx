@@ -11,15 +11,15 @@ import HalalBadge from './HalalBadge';
 
 interface NooshBowlsProps {
   onItemClick: (item: SpecialtyBowl) => void;
+  className?: string;
 }
 
-export default function NooshBowls({ onItemClick }: NooshBowlsProps) {
+export default function NooshBowls({ onItemClick, className = '' }: NooshBowlsProps) {
   return (
     <div
-      className="relative order-first rounded-lg bg-white p-6 shadow-lg lg:order-none"
+      className={`relative rounded-lg bg-white p-6 shadow-lg ${className}`}
       data-name="Noosh Bowls"
     >
-      {/* Column header — taller via py-3 */}
       <h3 className="mb-4 flex items-center justify-center rounded-lg bg-noosh-red-dark px-4 py-3 text-center text-2xl font-bold text-white">
         <Image
           src="/images/noosh-red.png"
@@ -32,14 +32,12 @@ export default function NooshBowls({ onItemClick }: NooshBowlsProps) {
         Bowls
       </h3>
 
-      {/* Build Your Own block */}
       <div className="rounded-lg bg-noosh-green px-4 py-4">
         <BuildYourOwn />
         <ProteinGrid />
         <SauceGrid />
       </div>
 
-      {/* Specialty Bowls header — taller via py-3, more space above */}
       <h3 className="mt-8 mb-4 rounded-lg bg-noosh-green px-4 py-3 text-center text-2xl font-bold text-white">
         Specialty Bowls
       </h3>

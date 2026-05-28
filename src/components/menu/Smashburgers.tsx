@@ -9,15 +9,15 @@ import HalalBadge from './HalalBadge';
 
 interface SmashburgersProps {
   onBurgerClick: (item: BurgerItemType) => void;
+  className?: string;
 }
 
-export default function Smashburgers({ onBurgerClick }: SmashburgersProps) {
+export default function Smashburgers({ onBurgerClick, className = '' }: SmashburgersProps) {
   return (
     <div
-      className="relative order-2 rounded-lg bg-white p-6 pb-20 shadow-lg lg:order-none"
+      className={`relative rounded-lg bg-white p-6 pb-20 shadow-lg ${className}`}
       data-name="Smashburgers"
     >
-      {/* Column header — taller via py-3 */}
       <h3 className="mb-4 rounded-lg bg-noosh-red-dark px-4 py-3 text-center text-2xl text-white">
         Smashburgers
       </h3>
@@ -30,7 +30,6 @@ export default function Smashburgers({ onBurgerClick }: SmashburgersProps) {
         ALL BURGERS SERVED ON A MARTIN&apos;S POTATO BUN
       </p>
 
-      {/* Extras — prices in Tanker to match menu price style */}
       <div className="flex justify-center">
         <div className="mt-5 inline-flex flex-wrap justify-center gap-4 rounded-full border border-black p-2">
           {burgerExtras.map((extra) => (
